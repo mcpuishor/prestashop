@@ -1,0 +1,29 @@
+{
+    "name": "mcpuishor/prestashop",
+    "description": "Direct interaction with Prestashop database using Laravel models",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability" : "dev",
+    "version" : "0.0.1",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mcpuishor\\Prestashop\\ServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^7.2"
+    },
+    "authors": [
+        {
+            "name": "Robert Tudor",
+            "email": "eu@robert-tudor.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Mcpuishor\\Prestashop\\": "src/"
+        }
+    }
+}
