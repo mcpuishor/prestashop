@@ -105,7 +105,18 @@ class Product extends Model {
 
 	public function categories()
 	{
-		return $this->belongsToMany(Category::class, "ps_category_product", $this->primaryKey, "id_category");
+		return $this->belongsToMany(Category::class, "ps_category_product", $this->primaryKey, "id_category")
+				->withPivot(['position']);
+	}
+
+	public function defaultCategory()
+	{
+		return $this->belongsTo(Category::class,  "id_category_default", "id_category");
+	}
+
+	public function defaultShop()
+	{
+		return $this->belongsTo(Shop::class, "id_shop_default", "id_shop");
 	}
 
 	public function images()
