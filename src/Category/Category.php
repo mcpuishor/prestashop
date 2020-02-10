@@ -14,7 +14,6 @@ class Category extends Model {
 	private $shop_pivotKeys = ['position'];
 	private $lang_pivotKeys = ['name', 'description', 'link_rewrite', 'meta_title', 'meta_keywords', 'meta_description'];
 
-
 	public function shop()
 	{
 		return $this
@@ -40,5 +39,4 @@ class Category extends Model {
 	{
 		return $this->hasMany(Product::class, "ps_category_product", $this->primaryKey, "id_product");
 	}
-
 }
