@@ -1,11 +1,10 @@
 <?php 
 namespace Mcpuishor\Prestashop\Image;
 use Mcpuishor\Prestashop\Abstracts\Model;
-use Mcpuishor\Prestashop\Image\ImageShop;
 
 
-class Image extends Model {
-	protected $table = "ps_image";
+class ImageShop extends Model {
+	protected $table = "ps_image_shop";
 	protected $primaryKey = "id_image";
 	public $timestamps = false;
 
@@ -21,9 +20,9 @@ class Image extends Model {
 		return $this->hasOne(Lang::class, $this->primaryKey);
 	}
 
-	public function shop()
+	public function image()
 	{
-		return $this->hasMany(ImageShop::class, $this->primaryKey);
+		return $this->belongsTo(Image::class, $this->primary_key);
 	}
 
 }
