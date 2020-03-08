@@ -2,6 +2,7 @@
 namespace Mcpuishor\Prestashop\Image;
 use Mcpuishor\Prestashop\Abstracts\Model;
 use Mcpuishor\Prestashop\Image\ImageShop;
+use Mcpuishor\Prestashop\Product\Product;
 
 
 class Image extends Model {
