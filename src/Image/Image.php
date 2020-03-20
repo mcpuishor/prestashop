@@ -10,7 +10,7 @@ class Image extends Model {
 	protected $primaryKey = "id_image";
 	public $timestamps = false;
 
-	protected $with = ["lang"];
+	protected $with = ["lang", "shop"];
 
 	public function product()
 	{
@@ -19,12 +19,18 @@ class Image extends Model {
 
 	public function lang()
 	{
-		return $this->hasOne(Lang::class, $this->primaryKey);
+		return $this->belongsToMany(Lang::class, "ps_image_lang", $this->primaryKey, "id_lang")
+				->as("details")
+				->withPivot($this->lang_pivotKeys);
 	}
+
 
 	public function shop()
 	{
-		return $this->hasMany(ImageShop::class, $this->primaryKey);
+		return $this
+			->belongsToMany(Shop::class, "ps_image_shop", $this->primaryKey, "id_shop")
+			->as("details")
+			->withPivot($this->shop_pivotKeys);
 	}
 
 }
