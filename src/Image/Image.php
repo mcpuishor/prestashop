@@ -10,7 +10,7 @@ class Image extends Model {
 	protected $primaryKey = "id_image";
 	public $timestamps = false;
 
-	protected $with = ["lang", "shop"];
+	// protected $with = ["lang", "shop"];
 
 	public function product()
 	{
