@@ -19,18 +19,12 @@ class Image extends Model {
 
 	public function lang()
 	{
-		return $this->belongsToMany(Lang::class, "ps_image_lang", $this->primaryKey, "id_lang")
-				->as("details")
-				->withPivot($this->lang_pivotKeys);
+		return $this->hasOne(Lang::class, $this->primaryKey);
 	}
-
 
 	public function shop()
 	{
-		return $this
-			->belongsToMany(Shop::class, "ps_image_shop", $this->primaryKey, "id_shop")
-			->as("details")
-			->withPivot($this->shop_pivotKeys);
+		return $this->hasMany(ImageShop::class, $this->primaryKey);
 	}
 
 }
