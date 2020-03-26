@@ -7,5 +7,5 @@ class Lang extends Model {
 	protected $primaryKey = "id_image";
 	public $timestamps = false;
 
-	protected $fillable = ["legend"];
+	protected $fillable = ["id_image", "legend", "id_lang"];
 }

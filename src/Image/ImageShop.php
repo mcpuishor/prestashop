@@ -9,6 +9,7 @@ class ImageShop extends Model {
 	public $timestamps = false;
 
 	protected $with = ["lang"];
+	protected $guarded = [];
 
 	public function product()
 	{
