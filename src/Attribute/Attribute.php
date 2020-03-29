@@ -7,6 +7,7 @@ use Mcpuishor\Prestashop\Lang\Lang;
 class Attribute extends Model {
 	protected $table = "ps_attribute";
 	protected $primaryKey = "id_attribute";
+	public $incrementing = true;
 	public $timestamps = false;
 
 	protected $with = ["lang", "group"];
