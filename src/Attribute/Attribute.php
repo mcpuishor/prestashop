@@ -15,6 +15,8 @@ class Attribute extends Model {
 		"name"
 	];
 
+	protected $guarded = ["id_attribute"];
+
 	public function lang()
 	{
 		return $this->belongsToMany(Lang::class, "ps_attribute_lang", $this->primaryKey, "id_lang")
