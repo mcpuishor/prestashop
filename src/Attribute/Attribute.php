@@ -3,6 +3,7 @@ namespace Mcpuishor\Prestashop\Attribute;
 use Mcpuishor\Prestashop\Abstracts\Model;
 use Mcpuishor\Prestashop\AttributeGroup\AttributeGroup;
 use Mcpuishor\Prestashop\Lang\Lang;
+use Mcpuishor\Prestashop\Shop\Shop;
 
 class Attribute extends Model {
 	protected $table = "ps_attribute";
@@ -10,7 +11,7 @@ class Attribute extends Model {
 	public $incrementing = true;
 	public $timestamps = false;
 
-	protected $with = ["lang", "group"];
+	protected $with = ["lang", "group", "shop"];
 
 	private $lang_pivotKeys = [
 		"name"
@@ -28,6 +29,11 @@ class Attribute extends Model {
 	public function group()
 	{
 		return $this->belongsTo(AttributeGroup::class, $this->primaryKey);
+	}
+
+	public function shop()
+	{
+		return $this->belongsTo(Shop::class, $this->primaryKey);
 	}
 
 }
