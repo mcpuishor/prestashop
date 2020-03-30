@@ -33,7 +33,7 @@ class Attribute extends Model {
 
 	public function shop()
 	{
-		return $this->belongsTo(Shop::class, $this->primaryKey);
+		return $this->belongsToMany(Shop::class, "ps_attribute_shop", $this->primaryKey, "id_shop");
 	}
 
 }
