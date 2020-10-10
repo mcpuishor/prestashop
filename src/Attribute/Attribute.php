@@ -21,7 +21,8 @@ class Attribute extends Model {
 
 	public function lang()
 	{
-		return $this->belongsToMany(Lang::class, "ps_attribute_lang", $this->primaryKey, "id_lang")
+		return $this
+				->belongsToMany(Lang::class, "ps_attribute_lang", $this->primaryKey, "id_lang")
 				->as("details")
 				->withPivot($this->lang_pivotKeys);
 	}

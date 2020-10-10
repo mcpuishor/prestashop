@@ -12,12 +12,12 @@ class Category extends Model {
 	public $timestamps = true;
 
 	private $shop_pivotKeys = ['position'];
-	private $lang_pivotKeys = ['name', 'description', 'link_rewrite', 'meta_title', 'meta_keywords', 'meta_description'];
+	private $lang_pivotKeys = ['id_shop','name', 'description', 'link_rewrite', 'meta_title', 'meta_keywords', 'meta_description'];
 
 	public function shop()
 	{
 		return $this
-			->belongsToMany(Shop::class, "ps_product_shop", $this->primaryKey, "id_shop")
+			->belongsToMany(Shop::class, "ps_category_shop", $this->primaryKey, "id_shop")
 			->as("details")
 			->withPivot($this->shop_pivotKeys);
 	}
@@ -38,5 +38,17 @@ class Category extends Model {
 	public function products()
 	{
 		return $this->hasMany(Product::class, "ps_category_product", $this->primaryKey, "id_product");
+	}
+
+	public function scopeChildren($query, $nleft, $nright)
+	{
+		return $query->where("nleft", ">", $nleft)
+					 ->where("nright", "<", $nright)
+					 ->orderBy("nleft");
+	}
+
+	public function scopeActive($query)
+	{
+		return $query->where("active", 1);
 	}
 }
