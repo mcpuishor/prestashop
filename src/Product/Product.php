@@ -16,7 +16,7 @@ class Product extends Model {
 	const PRODUCT_VISIBLE_BOTH = "both";
 	const PRODUCT_VISIBLE_SEARCH = "search";
 
-	protected $table = "ps_product";
+	protected $table = "product";
 	protected $primaryKey = "id_product";
 	public $timestamps = true;
 	public $incrementing = true;
