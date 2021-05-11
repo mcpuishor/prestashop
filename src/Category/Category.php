@@ -7,7 +7,7 @@ use Mcpuishor\Prestashop\Product\Product;
 use Mcpuishor\Prestashop\Shop\Shop;
 
 class Category extends Model {
-	protected $table = "ps_category";
+	protected $table = "category";
 	protected $primaryKey = "id_category";
 	public $timestamps = true;
 

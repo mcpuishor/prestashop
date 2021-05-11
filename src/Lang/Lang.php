@@ -6,7 +6,7 @@ use Mcpuishor\Prestashop\Product\Product;
 use Mcpuishor\Prestashop\Shop\Shop;
 
 class Lang extends Model {
-	protected $table = "ps_lang";
+	protected $table = "lang";
 	protected $primaryKey = "id_lang";
 
 	public function shops()

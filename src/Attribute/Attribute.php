@@ -6,7 +6,7 @@ use Mcpuishor\Prestashop\Lang\Lang;
 use Mcpuishor\Prestashop\Shop\Shop;
 
 class Attribute extends Model {
-	protected $table = "ps_attribute";
+	protected $table = "attribute";
 	protected $primaryKey = "id_attribute";
 	public $incrementing = true;
 	public $timestamps = false;

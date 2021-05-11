@@ -4,7 +4,7 @@ use Mcpuishor\Prestashop\Abstracts\Model;
 
 
 class ImageShop extends Model {
-	protected $table = "ps_image_shop";
+	protected $table = "image_shop";
 	protected $primaryKey = "id_image";
 	public $timestamps = false;
 

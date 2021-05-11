@@ -4,7 +4,7 @@ use Mcpuishor\Prestashop\Abstracts\Model;
 use Mcpuishor\Prestashop\Product\Product;
 
 class Shop extends Model {
-	protected $table = "ps_shop";
+	protected $table = "shop";
 	protected $primaryKey = "id_shop";
 	
 	protected $guarded = [

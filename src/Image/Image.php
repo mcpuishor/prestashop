@@ -6,7 +6,7 @@ use Mcpuishor\Prestashop\Product\Product;
 
 
 class Image extends Model {
-	protected $table = "ps_image";
+	protected $table = "image";
 	protected $primaryKey = "id_image";
 	public $timestamps = false;
 

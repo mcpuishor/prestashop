@@ -11,7 +11,7 @@ class Stock extends Model {
 	const STOCK_OOS_ALLOWORDERS = 1;
 	const STOCK_OOS_DENYORDERS = 0;
 
-	protected $table = "ps_stock_available";
+	protected $table = "stock_available";
 	protected $primaryKey = "id_stock_available";
 	public $timestamps = false;
 

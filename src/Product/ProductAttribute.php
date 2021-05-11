@@ -11,7 +11,7 @@ use Mcpuishor\Prestashop\Attribute\Attribute,
 
 class ProductAttribute extends Pivot {
 
-	protected $table = "ps_product_attribute";
+	protected $table = "product_attribute";
 	protected $primaryKey = "id_product_attribute";
 	public $incrementing = true;
 	public $timestamps = false;
