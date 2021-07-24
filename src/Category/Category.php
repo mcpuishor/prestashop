@@ -17,7 +17,7 @@ class Category extends Model {
 	public function shop()
 	{
 		return $this
-			->belongsToMany(Shop::class, "ps_category_shop", $this->primaryKey, "id_shop")
+			->belongsToMany(Shop::class, "category_shop", $this->primaryKey, "id_shop")
 			->as("details")
 			->withPivot($this->shop_pivotKeys);
 	}
@@ -25,7 +25,7 @@ class Category extends Model {
 	public function lang()
 	{
 		return $this
-			->belongsToMany(Lang::class, "ps_category_lang", $this->primaryKey, "id_lang")
+			->belongsToMany(Lang::class, "category_lang", $this->primaryKey, "id_lang")
 			->as("details")
 			->withPivot($this->lang_pivotKeys);
 	}
@@ -37,7 +37,7 @@ class Category extends Model {
 
 	public function products()
 	{
-		return $this->hasMany(Product::class, "ps_category_product", $this->primaryKey, "id_product");
+		return $this->hasMany(Product::class, "category_product", $this->primaryKey, "id_product");
 	}
 
 	public function scopeChildren($query, $nleft, $nright)

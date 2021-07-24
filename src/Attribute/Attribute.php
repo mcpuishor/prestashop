@@ -22,7 +22,7 @@ class Attribute extends Model {
 	public function lang()
 	{
 		return $this
-				->belongsToMany(Lang::class, "ps_attribute_lang", $this->primaryKey, "id_lang")
+				->belongsToMany(Lang::class, "attribute_lang", $this->primaryKey, "id_lang")
 				->as("details")
 				->withPivot($this->lang_pivotKeys);
 	}
@@ -34,7 +34,7 @@ class Attribute extends Model {
 
 	public function shop()
 	{
-		return $this->belongsToMany(Shop::class, "ps_attribute_shop", $this->primaryKey, "id_shop");
+		return $this->belongsToMany(Shop::class, "attribute_shop", $this->primaryKey, "id_shop");
 	}
 
 }

@@ -26,7 +26,7 @@ class Shop extends Model {
 
 	public function products()
 	{
-		return $this->belongsToMany(Product::class, "ps_product_shop", $this->primaryKey, "id_product")
+		return $this->belongsToMany(Product::class, "product_shop", $this->primaryKey, "id_product")
 				->as("details")
 					->withPivot($this->shop_pivotKeys);
 	}
