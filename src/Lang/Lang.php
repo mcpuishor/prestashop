@@ -11,11 +11,11 @@ class Lang extends Model {
 
 	public function shops()
 	{
-		return $this->belongsToMany(Shop::class, "ps_lang_shop", $this->primaryKey, "id_shop");
+		return $this->belongsToMany(Shop::class, "lang_shop", $this->primaryKey, "id_shop");
 	}
 
 	public function products()
 	{
-		return $this->belongsToMany(Product::class, "ps_product_lang", $this->primaryKey, "id_product");
+		return $this->belongsToMany(Product::class, "product_lang", $this->primaryKey, "id_product");
 	}
 }

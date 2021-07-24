@@ -67,7 +67,7 @@ class Product extends Model {
 		return $query
 			->with("lang")
 			->whereHas("lang", function ($lang) use ($language) {
-				$lang->where("ps_lang.id_lang", "=", $language);
+				$lang->where("lang.id_lang", "=", $language);
 				// $lang->find($language);
 			});
 	}
@@ -77,7 +77,7 @@ class Product extends Model {
 		return $query
 			->with("shop")
 			->whereHas("shop", function($shop) use ($shopId) {
-					$shop->where('ps_shop.id_shop', $shopId);
+					$shop->where('shop.id_shop', $shopId);
 					// $shop->find($shopId);
 				});
 	}
@@ -85,7 +85,7 @@ class Product extends Model {
 	public function shop()
 	{
 		return $this
-			->belongsToMany(Shop::class, "ps_product_shop", $this->primaryKey, "id_shop")
+			->belongsToMany(Shop::class, "product_shop", $this->primaryKey, "id_shop")
 			->as("details")
 			->withPivot($this->shop_pivotKeys);
 	}
@@ -93,7 +93,7 @@ class Product extends Model {
 	public function lang()
 	{
 		return $this
-			->belongsToMany(Lang::class, "ps_product_lang", $this->primaryKey, "id_lang")
+			->belongsToMany(Lang::class, "product_lang", $this->primaryKey, "id_lang")
 			->as("details")
 			->withPivot($this->lang_pivotKeys);
 	}
@@ -105,7 +105,7 @@ class Product extends Model {
 
 	public function categories()
 	{
-		return $this->belongsToMany(Category::class, "ps_category_product", $this->primaryKey, "id_category")
+		return $this->belongsToMany(Category::class, "category_product", $this->primaryKey, "id_category")
 				->withPivot(['position']);
 	}
 

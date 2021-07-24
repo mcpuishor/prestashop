@@ -4,7 +4,7 @@
     "type": "project",
     "license": "MIT",
     "minimum-stability" : "dev",
-    "version" : "0.0.1",
+    "version" : "1.0.0",
     "extra": {
         "laravel": {
             "providers": [

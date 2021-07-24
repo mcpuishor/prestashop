@@ -26,18 +26,18 @@ class ProductAttribute extends Pivot {
 
 	public function attribute()
 	{
-		return $this->belongsToMany(Attribute::class, "ps_product_attribute_combination", $this->primaryKey, "id_attribute")
+		return $this->belongsToMany(Attribute::class, "product_attribute_combination", $this->primaryKey, "id_attribute")
 				->as("details");
 	}
 
 	public function images()
 	{
-		return $this->belongsToMany(Image::class, "ps_product_attribute_image", $this->primaryKey, "id_image");
+		return $this->belongsToMany(Image::class, "product_attribute_image", $this->primaryKey, "id_image");
 	}
 
 	public function shop()
 	{
-		return $this->belongsToMany(Shop::class, "ps_product_attribute_shop", $this->primaryKey, "id_shop");
+		return $this->belongsToMany(Shop::class, "product_attribute_shop", $this->primaryKey, "id_shop");
 	}
 
 	public function stocks()
@@ -58,7 +58,7 @@ class ProductAttribute extends Pivot {
 	{
 		return $query->whereHas("shop", 
 						function($query) use ($shopId){
-							$query->where("ps_shop.id_shop", $shopId);
+							$query->where("shop.id_shop", $shopId);
 						});
 	}
 
